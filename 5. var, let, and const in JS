@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>var, let, and const in JS</title>
+  </head>
+  <body>
+    <script>
+      /*
+        var - 1996 
+        let - 2015 E6
+        const - 2015 E6
+        */
+
+      var a = 25;
+      var b = 35;
+      console.log(a + b);
+
+      //1.Scope
+      // var
+      if (true) {
+        var msg = "welcome to tutor joes";
+        console.log("var - inside scope : ", msg);
+      }
+      console.log("var - outside scope: ", msg); //act as global scope, can access outside also
+
+      // let
+      if (true) {
+        let msg1 = "welcome to tutor joes";
+        console.log("let - inside scope : ", msg1);
+      }
+      //console.log("let - outside scope: ", msg1); //Uncaught ReferenceError: msg1 is not defined, outside scope la work aagathu
+
+      // const
+      if (true) {
+        const msg2 = "welcome to tutor joes";
+        console.log("const - inside scope : ", msg2);
+      }
+      //console.log("const - outside scope: ",msg2) //Uncaught ReferenceError: msg2 is not defined
+      
+      // var declaration - can redeclare
+      var a = 25;
+      console.log(a);
+
+      var a = 45;
+      console.log("can redeclare var - ", a);
+
+     // let declaration - cannot redeclare
+      let aa = 25;
+      console.log(aa);
+
+      let aa = 45;
+      console.log("can redeclare var - ", aa);//Uncaught SyntaxError: Identifier 'aa' has already been declared
